@@ -1,7 +1,7 @@
 import React from "react";
 import { Tag } from "antd";
 import { ClockCircleOutlined, TableOutlined } from "@ant-design/icons";
-import { Order } from "../../types";
+import type { Order } from "../../types";
 import {
   APP_CONFIG,
   ORDER_STATUS_LABELS,

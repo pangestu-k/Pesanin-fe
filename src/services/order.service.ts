@@ -1,5 +1,5 @@
-import axiosInstance, { ApiResponse, PaginatedResponse } from '../libs/axios';
-import { Order, CreateOrderRequest, Payment } from '../types';
+import axiosInstance, { type ApiResponse, type PaginatedResponse } from '../libs/axios';
+import type { Order, CreateOrderRequest, Payment } from '../types';
 
 export const orderService = {
   // Get all orders with pagination (admin)

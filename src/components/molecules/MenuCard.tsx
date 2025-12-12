@@ -1,7 +1,7 @@
 import React from "react";
 import { PlusOutlined, MinusOutlined, DeleteOutlined } from "@ant-design/icons";
 import { APP_CONFIG, API_CONFIG } from "../../configs/api";
-import { Menu } from "../../types";
+import type { Menu } from "../../types";
 import { useCartStore } from "../../states/cart.store";
 
 interface MenuCardProps {

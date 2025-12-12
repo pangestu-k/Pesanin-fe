@@ -1,5 +1,5 @@
-import axiosInstance, { ApiResponse } from '../libs/axios';
-import { Category } from '../types';
+import axiosInstance, { type ApiResponse } from '../libs/axios';
+import type { Category } from '../types';
 
 export interface CreateCategoryRequest {
   name: string;

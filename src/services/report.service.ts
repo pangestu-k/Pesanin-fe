@@ -1,5 +1,5 @@
-import axiosInstance, { ApiResponse } from '../libs/axios';
-import { DailySalesReport, MonthlySalesReport, Transaction } from '../types';
+import axiosInstance, { type ApiResponse } from '../libs/axios';
+import type { DailySalesReport, MonthlySalesReport, Transaction } from '../types';
 
 export const reportService = {
   // Get daily sales report

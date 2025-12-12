@@ -5,7 +5,7 @@ import {
   EditOutlined,
   DeleteOutlined,
 } from "@ant-design/icons";
-import { Table } from "../../types";
+import type { Table } from "../../types";
 import { TABLE_STATUS } from "../../configs/api";
 
 interface TableCardProps {

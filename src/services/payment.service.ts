@@ -1,5 +1,5 @@
-import axiosInstance, { ApiResponse } from '../libs/axios';
-import { Payment } from '../types';
+import axiosInstance, { type ApiResponse } from '../libs/axios';
+import type { Payment } from '../types';
 
 export const paymentService = {
   // Get payment by order ID

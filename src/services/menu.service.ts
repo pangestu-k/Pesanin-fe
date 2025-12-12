@@ -1,5 +1,5 @@
-import axiosInstance, { ApiResponse, PaginatedResponse } from '../libs/axios';
-import { Menu, CreateMenuRequest, UpdateMenuRequest } from '../types';
+import axiosInstance, { type ApiResponse, type PaginatedResponse } from '../libs/axios';
+import type { Menu, CreateMenuRequest, UpdateMenuRequest } from '../types';
 
 export const menuService = {
   // Get all menus with pagination (admin)

@@ -1,6 +1,6 @@
 import React from "react";
 import { Spin, Empty } from "antd";
-import { Order } from "../../types";
+import type { Order } from "../../types";
 import OrderCard from "../molecules/OrderCard";
 
 interface OrderListProps {

@@ -1,6 +1,6 @@
 import React from "react";
 import { Spin, Empty } from "antd";
-import { Menu } from "../../types";
+import type { Menu } from "../../types";
 import MenuCard from "../molecules/MenuCard";
 
 interface MenuGridProps {

@@ -1,31 +1,20 @@
-import React, { useState } from "react";
 import {
-  Table,
-  Button,
-  Tag,
-  Select,
-  Modal,
-  message,
-  Space,
-  Descriptions,
-  Timeline,
-} from "antd";
-import {
-  EyeOutlined,
   CheckOutlined,
   CloseOutlined,
+  EyeOutlined,
   FireOutlined,
-  SearchOutlined,
 } from "@ant-design/icons";
-import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { orderService } from "../../../services/order.service";
-import { Order } from "../../../types";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { Button, Descriptions, Modal, Space, Table, Tag, message } from "antd";
+import React, { useState } from "react";
 import {
   APP_CONFIG,
   ORDER_STATUS,
-  ORDER_STATUS_LABELS,
   ORDER_STATUS_COLORS,
+  ORDER_STATUS_LABELS,
 } from "../../../configs/api";
+import { orderService } from "../../../services/order.service";
+import type { Order } from "../../../types";
 
 const OrdersPage: React.FC = () => {
   const [selectedOrder, setSelectedOrder] = useState<Order | null>(null);

@@ -6,10 +6,17 @@ export const API_CONFIG = {
 
 // App Constants
 export const APP_CONFIG = {
-  APP_NAME: 'Pesanin',
+  APP_NAME: import.meta.env.VITE_APP_NAME || 'Pesanin',
+  APP_VERSION: import.meta.env.VITE_APP_VERSION || '1.0.0',
   APP_DESCRIPTION: 'Sistem Pemesanan Restoran Berbasis Barcode',
   CURRENCY: 'Rp',
   LOCALE: 'id-ID',
+};
+
+// Midtrans Configuration
+export const MIDTRANS_CONFIG = {
+  CLIENT_KEY: import.meta.env.VITE_MIDTRANS_CLIENT_KEY || '',
+  SNAP_URL: import.meta.env.VITE_MIDTRANS_SNAP_URL || 'https://app.sandbox.midtrans.com/snap/snap.js',
 };
 
 // Order Status

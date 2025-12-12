@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { CartItem, Menu } from '../types';
+import type { CartItem, Menu } from '../types';
 import { STORAGE_KEYS } from '../configs/api';
 
 interface CartState {

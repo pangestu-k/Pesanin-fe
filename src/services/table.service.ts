@@ -1,5 +1,5 @@
-import axiosInstance, { ApiResponse, PaginatedResponse } from '../libs/axios';
-import { Table, CreateTableRequest, UpdateTableRequest } from '../types';
+import axiosInstance, { type ApiResponse, type PaginatedResponse } from '../libs/axios';
+import type { Table, CreateTableRequest, UpdateTableRequest } from '../types';
 
 export const tableService = {
   // Get all tables with pagination (admin)

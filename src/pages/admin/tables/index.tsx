@@ -1,20 +1,23 @@
-import React, { useState } from "react";
+import { PlusOutlined } from "@ant-design/icons";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import {
   Button,
-  Modal,
+  Col,
   Form,
   InputNumber,
-  message,
-  Popconfirm,
-  Select,
+  Modal,
   Row,
-  Col,
+  Select,
+  message,
 } from "antd";
-import { PlusOutlined } from "@ant-design/icons";
-import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { tableService } from "../../../services/table.service";
-import { Table, CreateTableRequest, UpdateTableRequest } from "../../../types";
+import React, { useState } from "react";
 import TableCard from "../../../components/molecules/TableCard";
+import { tableService } from "../../../services/table.service";
+import type {
+  CreateTableRequest,
+  Table,
+  UpdateTableRequest,
+} from "../../../types";
 
 const TablesPage: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

@@ -1,4 +1,4 @@
-import axios, { AxiosError, InternalAxiosRequestConfig } from 'axios';
+import axios, { type AxiosError, type InternalAxiosRequestConfig } from 'axios';
 import { API_CONFIG, STORAGE_KEYS } from '../configs/api';
 import { getItem, removeItem } from './storage';
 

@@ -1,31 +1,35 @@
-import React, { useState } from "react";
 import {
-  Table,
+  DeleteOutlined,
+  EditOutlined,
+  PlusOutlined,
+  SearchOutlined,
+  UploadOutlined,
+} from "@ant-design/icons";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import {
   Button,
-  Modal,
   Form,
+  Image,
   Input,
   InputNumber,
+  Modal,
+  Popconfirm,
   Select,
+  Space,
+  Table,
+  Tag,
   Upload,
   message,
-  Space,
-  Tag,
-  Popconfirm,
-  Image,
 } from "antd";
-import {
-  PlusOutlined,
-  EditOutlined,
-  DeleteOutlined,
-  UploadOutlined,
-  SearchOutlined,
-} from "@ant-design/icons";
-import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { menuService } from "../../../services/menu.service";
+import React, { useState } from "react";
+import { API_CONFIG, APP_CONFIG } from "../../../configs/api";
 import { categoryService } from "../../../services/category.service";
-import { Menu, CreateMenuRequest, UpdateMenuRequest } from "../../../types";
-import { APP_CONFIG, API_CONFIG } from "../../../configs/api";
+import { menuService } from "../../../services/menu.service";
+import type {
+  CreateMenuRequest,
+  Menu,
+  UpdateMenuRequest,
+} from "../../../types";
 
 const MenuPage: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

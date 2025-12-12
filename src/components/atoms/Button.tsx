@@ -1,5 +1,6 @@
 import React from "react";
-import { Button as AntButton, ButtonProps as AntButtonProps } from "antd";
+import { Button as AntButton } from "antd";
+import type { ButtonProps as AntButtonProps } from "antd";
 
 interface ButtonProps extends AntButtonProps {
   variant?: "primary" | "secondary" | "ghost" | "danger";

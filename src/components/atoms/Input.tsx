@@ -1,5 +1,6 @@
 import React from "react";
-import { Input as AntInput, InputProps as AntInputProps } from "antd";
+import { Input as AntInput } from "antd";
+import type { InputProps as AntInputProps } from "antd";
 
 interface InputProps extends AntInputProps {
   label?: string;

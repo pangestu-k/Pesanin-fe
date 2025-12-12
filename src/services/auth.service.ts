@@ -1,5 +1,5 @@
-import axiosInstance, { ApiResponse } from '../libs/axios';
-import { User, LoginRequest, LoginResponse, RegisterRequest } from '../types';
+import axiosInstance, { type ApiResponse } from '../libs/axios';
+import type { User, LoginRequest, LoginResponse, RegisterRequest } from '../types';
 
 export const authService = {
   // Login user
