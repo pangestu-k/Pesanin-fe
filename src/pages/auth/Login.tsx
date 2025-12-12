@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Form, Input, message } from "antd";
 import { UserOutlined, LockOutlined, LoadingOutlined } from "@ant-design/icons";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import { authService } from "../../services/auth.service";
 import { useUserStore } from "../../states/user.store";
 
@@ -104,8 +104,17 @@ const Login: React.FC = () => {
       </Form>
 
       {/* Footer */}
-      <div className="mt-8 text-center">
-        <p className="text-sm text-gray-500">
+      <div className="mt-6 text-center">
+        <p className="text-sm text-gray-500 mb-2">
+          Belum punya akun?{" "}
+          <Link
+            to="/register"
+            className="text-primary-600 font-semibold hover:text-primary-700 transition-colors"
+          >
+            Daftar di sini
+          </Link>
+        </p>
+        <p className="text-xs text-gray-400">
           &copy; 2024 Pesanin. Sistem Pemesanan Restoran.
         </p>
       </div>

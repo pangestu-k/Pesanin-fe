@@ -25,4 +25,15 @@ export const authService = {
     const response = await axiosInstance.get<ApiResponse<User>>('/auth/me');
     return response.data.data;
   },
+
+  // Update user profile
+  updateProfile: async (data: { name?: string; email?: string }): Promise<User> => {
+    const response = await axiosInstance.put<ApiResponse<User>>('/auth/profile', data);
+    return response.data.data;
+  },
+
+  // Change password
+  changePassword: async (data: { current_password: string; new_password: string }): Promise<void> => {
+    await axiosInstance.put<ApiResponse<void>>('/auth/password', data);
+  },
 };

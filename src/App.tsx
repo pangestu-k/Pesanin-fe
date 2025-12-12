@@ -6,9 +6,9 @@ import idID from "antd/locale/id_ID";
 import { QueryProvider } from "./app/providers/QueryProvider";
 import AuthLayout from "./layouts/AuthLayout";
 import Login from "./pages/auth/Login";
+import Register from "./pages/auth/Register";
 import AdminRoutes from "./app/routes/admin.routes";
 import CustomerRoutes from "./app/routes/customer.routes";
-import { useUserStore } from "./states/user.store";
 
 // Home component - redirects based on context
 const Home: React.FC = () => {
@@ -68,6 +68,7 @@ const App: React.FC = () => {
             {/* Auth Routes */}
             <Route element={<AuthLayout />}>
               <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
             </Route>
 
             {/* Admin Routes */}

@@ -1,6 +1,7 @@
 import axios, { type AxiosError, type InternalAxiosRequestConfig } from 'axios';
 import { API_CONFIG, STORAGE_KEYS } from '../configs/api';
 import { getItem, removeItem } from './storage';
+import { useUserStore } from '../states/user.store';
 
 // Create axios instance
 const axiosInstance = axios.create({
@@ -30,12 +31,15 @@ axiosInstance.interceptors.response.use(
   (response) => response,
   (error: AxiosError) => {
     if (error.response?.status === 401) {
-      // Token expired or invalid
+      // Token expired or invalid - clear all auth data
       removeItem(STORAGE_KEYS.TOKEN);
       removeItem(STORAGE_KEYS.USER);
       
-      // Redirect to login if on admin routes
-      if (window.location.pathname.startsWith('/admin') || window.location.pathname === '/login') {
+      // Logout from zustand store
+      useUserStore.getState().logout();
+      
+      // Redirect to login if on protected routes
+      if (window.location.pathname.startsWith('/admin') || window.location.pathname.startsWith('/customer')) {
         window.location.href = '/login';
       }
     }

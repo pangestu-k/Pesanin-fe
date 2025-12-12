@@ -9,6 +9,7 @@ import MenuPage from "../../pages/admin/menu";
 import OrdersPage from "../../pages/admin/orders";
 import TablesPage from "../../pages/admin/tables";
 import ReportsPage from "../../pages/admin/reports";
+import ProfilePage from "../../pages/admin/profile";
 
 const AdminRoutes: React.FC = () => {
   return (
@@ -24,6 +25,7 @@ const AdminRoutes: React.FC = () => {
           <Route path="orders" element={<OrdersPage />} />
           <Route path="tables" element={<TablesPage />} />
           <Route path="reports" element={<ReportsPage />} />
+          <Route path="profile" element={<ProfilePage />} />
         </Route>
       </Routes>
     </AuthProvider>
