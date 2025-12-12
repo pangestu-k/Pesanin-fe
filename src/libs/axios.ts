@@ -1,0 +1,66 @@
+import axios, { AxiosError, InternalAxiosRequestConfig } from 'axios';
+import { API_CONFIG, STORAGE_KEYS } from '../configs/api';
+import { getItem, removeItem } from './storage';
+
+// Create axios instance
+const axiosInstance = axios.create({
+  baseURL: API_CONFIG.BASE_URL,
+  timeout: API_CONFIG.TIMEOUT,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+
+// Request interceptor - Add auth token
+axiosInstance.interceptors.request.use(
+  (config: InternalAxiosRequestConfig) => {
+    const token = getItem<string>(STORAGE_KEYS.TOKEN);
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
+
+// Response interceptor - Handle errors
+axiosInstance.interceptors.response.use(
+  (response) => response,
+  (error: AxiosError) => {
+    if (error.response?.status === 401) {
+      // Token expired or invalid
+      removeItem(STORAGE_KEYS.TOKEN);
+      removeItem(STORAGE_KEYS.USER);
+      
+      // Redirect to login if on admin routes
+      if (window.location.pathname.startsWith('/admin') || window.location.pathname === '/login') {
+        window.location.href = '/login';
+      }
+    }
+    return Promise.reject(error);
+  }
+);
+
+export default axiosInstance;
+
+// API Response Types
+export interface ApiResponse<T> {
+  success: boolean;
+  message: string;
+  data: T;
+  code?: string;
+}
+
+export interface PaginatedResponse<T> {
+  success: boolean;
+  message: string;
+  data: T[];
+  pagination: {
+    page: number;
+    page_size: number;
+    total: number;
+    total_pages: number;
+  };
+}
